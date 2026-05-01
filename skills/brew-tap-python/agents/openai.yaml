@@ -1,0 +1,4 @@
+interface:
+  display_name: "Brew Tap Python"
+  short_description: "Create a Python Homebrew tap"
+  default_prompt: "Use $brew-tap-python to create a production-ready Homebrew tap for a Python CLI package."
