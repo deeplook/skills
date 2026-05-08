@@ -1,0 +1,4 @@
+interface:
+  display_name: "Follow CLIG"
+  short_description: "Audit, guide, or fix a CLI against the CLIG guidelines"
+  default_prompt: "Use $follow-clig to audit my CLI tool against the CLIG guidelines and report any violations."
