@@ -12,6 +12,7 @@ For now, the repo stays flat at the skill level. Category folders can be added l
 
 - `brew-tap-python` - Create a production-ready Homebrew tap for a Python CLI tool.
 - `follow-clig` - Audit, guide, or fix a CLI tool against the CLIG guidelines (clig.dev).
+- `release-hygiene` - Audit and fix release hygiene for GitHub-hosted Python packages (PEP 740 attestation, action pinning, Dependabot, and more).
 
 ## Install
 

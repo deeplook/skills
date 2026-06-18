@@ -6,6 +6,7 @@ This directory contains the actual skill folders.
 
 - [`brew-tap-python`](./brew-tap-python) - Create a production-ready Homebrew tap for a Python CLI tool.
 - [`follow-clig`](./follow-clig) - Audit, guide, or fix a CLI tool against the CLIG guidelines (https://clig.dev).
+- [`release-hygiene`](./release-hygiene) - Audit and fix release hygiene for GitHub-hosted Python packages (PEP 740 attestation, action pinning, Dependabot, and more).
 
 ## Notes
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Release Hygiene"
+  short_description: "Audit PEP 740 attestation and release workflow hygiene for Python packages"
+  default_prompt: "Use $release-hygiene to check the release hygiene of this Python project."

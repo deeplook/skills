@@ -6,7 +6,8 @@ help:
 		"  make validate  Run skills validation"
 
 test:
-	python3 -m unittest discover -s tests -p 'test_*.py'
+	uv run --with-requirements requirements-test.txt \
+		python -m unittest discover -s tests -p 'test_*.py'
 
 validate:
 	python3 scripts/validate_skills.py
