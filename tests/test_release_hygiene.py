@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import importlib.util
+import re
 import sys
 import unittest
 from pathlib import Path
@@ -22,6 +23,7 @@ release_hygiene = importlib.util.module_from_spec(SPEC)
 sys.modules[SPEC.name] = release_hygiene
 SPEC.loader.exec_module(release_hygiene)
 RUNNER = CliRunner()
+ANSI_ESCAPE = re.compile(r"\x1b\[[0-?]*[ -/]*[@-~]")
 
 
 class FakeClient:
@@ -41,13 +43,14 @@ class FakeClient:
 class CliHelpTests(unittest.TestCase):
     def test_help_is_self_contained(self) -> None:
         result = RUNNER.invoke(release_hygiene.app, ["--help"])
+        output = ANSI_ESCAPE.sub("", result.output)
 
         self.assertEqual(0, result.exit_code)
-        self.assertIn("--pypi-version", result.output)
-        self.assertIn("Historical audits", result.output)
-        self.assertIn("status is 0", result.output)
-        self.assertIn("does not modify", result.output)
-        self.assertNotIn("--version", result.output)
+        self.assertIn("--pypi-version", output)
+        self.assertIn("Historical audits", output)
+        self.assertIn("status is 0", output)
+        self.assertIn("does not modify", output)
+        self.assertNotIn("--version", output)
 
     def test_no_arguments_prints_concise_help(self) -> None:
         result = RUNNER.invoke(release_hygiene.app, [])
